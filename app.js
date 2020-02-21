@@ -4,7 +4,10 @@ const express = require("express"),
       mongoose = require("mongoose"),
       Campground = require("./models/campground"),
       Comment = require("./models/comment"),
-      seedDB = require("./seeds");
+      seedDB = require("./seeds"),
+      passport = require("passport"),
+      User = require("./models/user"),
+      LocalStrategy = require("passport-local");
       // Campground = require("./models/campground"),
       // Campground = require("./models/campground");
 
