@@ -47,7 +47,7 @@ app.get("/campgrounds", function(req,res) {
 
 //NEW - show form to create new campground
 app.get("/campgrounds/new", function(req,res) {
-  res.render("campgroounds/new")
+  res.render("campgrounds/new")
 });
 
 //CREATE - add new campground to DB
@@ -140,6 +140,14 @@ app.post("/register", function(req,res) {
   })
 });
 
+//Show login form
+app.get("/login", function(req,res) {
+  res.render("login")
+});
+// handleing login logic
+app.post("/login", passport.authenticate("local", {successRedirect: "/campgrounds"}),  function(req,res) {
+  
+});
 
 app.listen(3000, () => {
   console.log("YELPCAMP Server is Up and Running")
